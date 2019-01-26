@@ -1,0 +1,111 @@
+Create an app to upload and browse photos with the following features (functional
+requirements):
+
+The application supports work with a registered, anonymous and administrator type of
+user
+    User registration must be enabled using 
+    Google, 
+    Github and 
+    local account <--DONE-->
+
+    when registering user, you have to choose one of the packages <--DONE-->
+    for use: FREE, PRO or
+    GOLD - limit the price of the package yourself (e.g. upload size, daily upload limit,
+    maximum spend of uploaded photos, etc.) 
+
+user can track the current consumption in <--DONE-->
+his current package 
+
+user can 
+change the packet  <--DONE-->
+once a day (change is valid from the following day)
+
+user can set 
+one or more hashtags and a 
+description of photo when uploading <--DONE-->
+
+the user can choose how the image will be processed before being saved (e.g. resize,
+png / jpeg / bmp format)
+
+user can browse all uploaded photos <--DONE-->
+
+registered user can modify the description  <--DONE-->
+and hash tags of their photos 
+while the anonymous user can only browse uploaded photos <--DONE-->
+
+by default, thumbnails of 10 last uploaded photos are displayed with a 
+description,    <--DONE-->
+author,         <--DONE-->
+upload datetime <--DONE--> 
+hashtags
+
+click on the photo thumbnail displays the whole photo <--DONE-->
+
+user can search photos based on given filter
+hashtags, 
+size, <--DONE-->
+upload datetime range, <--DONE-->
+author <--DONE-->
+
+user can download the photo <--DONE--> 
+
+When downloading, the user can choose to <--DONE-->
+download the original photo or <--DONE-->
+the photo with applied selected filters (e.g., resize + sepia + blur ) <--DONE-->
+format)
+
+administrator can do everything what registered user can, and additionally <--DONE-->
+
+modify the profile and packages of user <--DONE-->
+view user actions and <--DONE-->
+user statistics <--DONE-->
+manage images of any user <--DONE-->
+
+
+Nonfunctional requirements:
+ logging of every action has to be implemented: by who, when and what operation was
+made <--DONE-->
+ depending on the chosen configuration, photos have to be saved on local storage <--DONE-->
+or
+Amazon s3 bucket
+ App has to be implemented as web or desktop application using object oriented
+language <--DONE-->
+Submission terms
+To be determined not later then 2018, October 13 th
+
+
+Design pattern :
+
+//OK
+//Only one access to the DB
+Singleton   :   dbSingleton.php
+
+//OK
+//The proxy could interface to anything: a network connection, or some other resource.
+//We can change the login system without problem
+Proxy       :   loginSystemProxy.php
+                loginSystemInterface.php
+                loginSystem.php
+
+//OK
+//Easy to maintain
+MVC         :   All the structure of the project
+
+//OK
+//It's logic to use it with MVC, View only show the html no logic inside
+Facade      :   View
+                Controller 
+                (ex : index.php and indexController.php)
+
+//OK
+//We create object without exposing the creation logic to the client and refer to newly created object using a common interface.
+Factory     :   classicPictureFactory.php
+                pictureFactory.php
+                pictureInterface.php
+                gallery.php
+
+//To do
+Strategy    :   Package
+Iterator    :   For the page
+Builder +
+Decorator   :   Sepia, resize, blur, ...
