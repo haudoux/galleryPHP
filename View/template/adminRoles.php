@@ -1,5 +1,5 @@
 <?php
-    require("/var/www/html/pattern/Controller/adminRolesController.php");
+    require("/var/www/html/pattern/Controller/adminController/adminRolesController.php");
     $ctrl = new adminRolesController();
     if (isset($_POST['modify'])) {
         loggerSingleton::getInstance()->writeLog("View modify", levelLogger::DEBUG);

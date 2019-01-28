@@ -1,5 +1,5 @@
 <?php
-require_once("/var/www/html/pattern/Controller/loggerSingleton.php");
+require_once("/var/www/html/pattern/Controller/loggerSystem/loggerSingleton.php");
 
 final class dbSingleton
 {
@@ -52,12 +52,12 @@ final class dbSingleton
     public function selectSQL($query, $param = 0)
     {
         $parameters = 0;
-        if($param !== 0){
+        if ($param !== 0) {
             $parameters = array_values($param);
         }
         loggerSingleton::getInstance()->writeLog("Query to execute : ".$query, levelLogger::INFO);
         loggerSingleton::getInstance()->writeLog("Parameters : ".implode(" ", $parameters), levelLogger::INFO);
-        loggerSingleton::getInstance()->writeLog("Parameters : ".print_r($parameters,true), levelLogger::INFO);
+        loggerSingleton::getInstance()->writeLog("Parameters : ".print_r($parameters, true), levelLogger::INFO);
 
         $data = [];
 

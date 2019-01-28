@@ -1,5 +1,5 @@
 <?php
-    require("/var/www/html/pattern/Controller/adminUsersController.php");
+    require("/var/www/html/pattern/Controller/adminController/adminUsersController.php");
     $ctrl = new adminUsersController();
     if (isset($_POST['modify'])) {
         loggerSingleton::getInstance()->writeLog("View modify", levelLogger::DEBUG);

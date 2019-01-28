@@ -1,6 +1,6 @@
 <?php
     session_start();
-    require("/var/www/html/pattern/Controller/userProfilController.php");
+    require("/var/www/html/pattern/Controller/userSystem/userProfilController.php");
     $ctrl = new userProfilController();
     if (isset($_POST['modify'])) {
         loggerSingleton::getInstance()->writeLog("modify", levelLogger::DEBUG);

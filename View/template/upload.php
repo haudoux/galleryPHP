@@ -1,5 +1,5 @@
 <?php
-    require("/var/www/html/pattern/Controller/uploadController.php");
+    require("/var/www/html/pattern/Controller/uploadSystem/uploadController.php");
     $ctrl = new uploadController();
     if (isset($_POST['submit'])) {
         loggerSingleton::getInstance()->writeLog("View submit", levelLogger::DEBUG);

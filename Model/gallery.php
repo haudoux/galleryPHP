@@ -1,6 +1,8 @@
 <?php
-require_once("/var/www/html/pattern/Controller/loggerSingleton.php");
+require_once("/var/www/html/pattern/Controller/loggerSystem/loggerSingleton.php");
+
 require_once("/var/www/html/pattern/Model/classicPictureFactory.php");
+
 require_once("dbSingleton.php");
 require_once("picture.php");
 
@@ -57,14 +59,14 @@ class Gallery
     }
     public function searchGallery($search, $limit = 0, $offset = 0)
     {
-        $sql    = "SELECT id_gallery, fk_id_user, user.uid_user, description_gallery, title_gallery, img_full_name_gallery, creation_date_gallery, modification_date_gallery, size_kb_gallery FROM template.gallery LEFT JOIN user ON user.id_user = fk_id_user WHERE description_gallery LIKE ? OR title_gallery LIKE ? OR user.uid_user LIKE ? OR creation_date_gallery LIKE ? OR hastags_gallery LIKE ? OR size_kb_gallery LIKE ? ";
+        $sql    = "SELECT id_gallery, fk_id_user, user.uid_user, description_gallery, title_gallery, img_full_name_gallery, creation_date_gallery, modification_date_gallery, size_kb_gallery FROM template.gallery LEFT JOIN user ON user.id_user = fk_id_user WHERE description_gallery REGEXP ? OR title_gallery REGEXP ? OR user.uid_user REGEXP ? OR creation_date_gallery REGEXP ? OR hastags_gallery REGEXP ? OR size_kb_gallery REGEXP ? ";
         $param  = array($search,$search,$search,$search,$search,$search,"limit" => $limit, "offset" => $offset);
 
         $this->sortQuery($sql, $param);
     }
     private function sortQuery($sql, $param)
     {
-        loggerSingleton::getInstance()->writeLog("Param ".print_r($param,true), levelLogger::DEBUG);
+        loggerSingleton::getInstance()->writeLog("Param ".print_r($param, true), levelLogger::DEBUG);
         if ($param['limit'] !== 0) {
             $sql                .= "LIMIT ? OFFSET ?";
             $param["offset"]    *= 10;

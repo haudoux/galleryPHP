@@ -1,5 +1,5 @@
 <?php
-require_once("/var/www/html/pattern/Controller/loggerSingleton.php");
+require_once("/var/www/html/pattern/Controller/loggerSystem/loggerSingleton.php");
 require_once("dbSingleton.php");
 require_once("package.php");
 

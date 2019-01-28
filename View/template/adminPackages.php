@@ -1,5 +1,5 @@
 <?php
-    require("/var/www/html/pattern/Controller/adminPackagesController.php");
+    require("/var/www/html/pattern/Controller/adminController/adminPackagesController.php");
     $ctrl = new adminPackagesController();
     if (isset($_POST['modify'])) {
         loggerSingleton::getInstance()->writeLog("View modify", levelLogger::DEBUG);

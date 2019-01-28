@@ -1,6 +1,6 @@
 <?php
     session_start();
-    require("/var/www/html/pattern/Controller/userGalleryController.php");
+    require("/var/www/html/pattern/Controller/userSystem/userGalleryController.php");
     $ctrl = new userGalleryController();
     if (isset($_POST['modify'])) {
         loggerSingleton::getInstance()->writeLog("modify", levelLogger::DEBUG);

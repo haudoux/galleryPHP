@@ -1,5 +1,5 @@
 <?php
-    require("/var/www/html/pattern/Controller/adminGalleryController.php");
+    require("/var/www/html/pattern/Controller/adminController/adminGalleryController.php");
     $ctrl = new adminGalleryController();
     if (isset($_POST['modify'])) {
         loggerSingleton::getInstance()->writeLog("View modify", levelLogger::DEBUG);

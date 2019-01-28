@@ -1,5 +1,5 @@
 <?php
-    require("/var/www/html/pattern/Controller/indexController.php");
+    require("/var/www/html/pattern/Controller/home/indexController.php");
     $ctrl = new indexController();
     if (isset($_POST['next'])) {
         echo $ctrl->renderTemplateNext();
