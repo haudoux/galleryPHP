@@ -7,11 +7,9 @@ require_once("/var/www/html/pattern/Model/gallery.php");
 class blurDecorator implements IpictureDecorator
 {
     private $pathToWrite;
-    private $fullPath;
 
-    public function __construct($fullPath)
+    public function __construct()
     {
-        $this->fullPath     = $fullPath;
     }
     public function decorate($pathToWrite, $value)
     {
@@ -20,7 +18,7 @@ class blurDecorator implements IpictureDecorator
     }
     private function radialBlurImage($pathToWrite, $blurRadius)
     {
-        $imagick = new Imagick(realpath($this->fullPath));
+        $imagick = new Imagick($pathToWrite);
         $imagick->setFormat("jpg");
         $imagick->radialBlurImage($blurRadius);
         

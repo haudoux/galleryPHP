@@ -29,11 +29,11 @@ class downloadController
         //$this->dowSys->download($id);
         //header("Location: index.php");
     }
-    public function renderModifyPicture($id, $sepiaEnable, $sepia, $blurEnable, $blurRadius, $resizeEnable, $percent, $original)
+    public function renderModifyPicture($id, $sepiaEnable = "no", $sepia, $blurEnable = "no", $blurRadius, $resizeEnable = "no", $percent = 0)
     {
         //$html  = $this->header->renderTemplate();
         //$html .= $this->footer->renderTemplate();
-        $this->dowSys->download($id, $sepiaEnable, $sepia, $blurEnable, $blurRadius, $resizeEnable, $percent, $original);
+        $this->dowSys->download($id, $sepiaEnable, $sepia, $blurEnable, $blurRadius, $resizeEnable, $percent);
         return $html;
         
         //header("Location: index.php");
@@ -43,7 +43,6 @@ class downloadController
         $html = '
         <form action="download.php" method="post" >
             <input type="hidden" name="id" value="'.$id.'"/>
-            Original    <input type="checkbox"  name="original"/>
             Enable      <input type="checkbox"  name="sepiaEnable"/>
             Sepia       <input type="range"     name="sepia" min="0" max="100"/>
             Enable      <input type="checkbox"  name="blurEnable"/>
