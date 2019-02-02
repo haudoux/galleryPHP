@@ -24,4 +24,14 @@ Strategy for the package system
 Iterator for the paging
 Builder to manage the decorator
 
+
+config.cfg : 
+
+Contain the level minimum to write in the logger file
+
+0 -> DEBUG
+1 -> INFO
+2 -> WARNING
+3 -> ERROR
+
 Enjoy
