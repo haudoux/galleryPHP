@@ -57,7 +57,7 @@ class adminStatsController
                         <tr>
                             <td>'.$user->getUid().'</td>
                             <td>'.$user->getUploadKb().'</td>
-                            <td>'.$packageUser->getUploadLimit().'</td>
+                            <td>'.$packageUser->getSizeUploadLimit().'</td>
                             <td>'.$user->getUploadNb().'</td>
                             <td>'.$packageUser->getMaximumUpload().'</td>
                         </tr>';
