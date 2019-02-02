@@ -157,7 +157,7 @@ class userProfilController
                 <tbody>
                     <tr>
                         <td>'.$this->user->getUid().'</td>
-                        <td>'.$this->user->getPackageId().'</td>
+                        <td>'.$this->user->getPackageName().'</td>
                         <td>'.$this->user->getEmail().'</td>
                         <td>'.$this->user->getUploadKb().'</td>
                         <td>'.$this->user->getUploadNb().'</td>
