@@ -48,7 +48,7 @@ class downloadSystem
         loggerSingleton::getInstance()->writeLog("Start sending file", levelLogger::DEBUG);
         loggerSingleton::getInstance()->writeLog("Sending header", levelLogger::DEBUG);
         header('Content-type: application/jpeg');
-        header('Content-Disposition: attachment; filename="'.stream_get_meta_data($temp)['uri'].'.jpg"');
+        header('Content-Disposition: attachment; filename="'.$pic->getTitle().'.jpg"');
         loggerSingleton::getInstance()->writeLog("Start reading file", levelLogger::DEBUG);
         loggerSingleton::getInstance()->writeLog("Path : ".stream_get_meta_data($temp)['uri'], levelLogger::DEBUG);
         readfile($toSend);

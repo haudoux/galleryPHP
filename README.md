@@ -34,4 +34,14 @@ Contain the level minimum to write in the logger file
 2 -> WARNING
 3 -> ERROR
 
+#################################################################
+If you have a problem with the upload check the php.ini file
+
+Maximum allowed size for uploaded files.
+upload_max_filesize = 40M
+
+Must be greater than or equal to upload_max_filesize
+post_max_size = 40M
+#################################################################
+
 Enjoy

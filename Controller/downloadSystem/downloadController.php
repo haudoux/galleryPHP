@@ -25,18 +25,11 @@ class downloadController
         $html .= $this->renderBodyModify($id);
         $html .= $this->footer->renderTemplate();
         return $html;
-
-        //$this->dowSys->download($id);
-        //header("Location: index.php");
     }
     public function renderModifyPicture($id, $sepiaEnable = "no", $sepia, $blurEnable = "no", $blurRadius, $resizeEnable = "no", $percent = 0)
     {
-        //$html  = $this->header->renderTemplate();
-        //$html .= $this->footer->renderTemplate();
         $this->dowSys->download($id, $sepiaEnable, $sepia, $blurEnable, $blurRadius, $resizeEnable, $percent);
         return $html;
-        
-        //header("Location: index.php");
     }
     private function renderBodyModify($id)
     {
