@@ -49,7 +49,7 @@ upload_max_filesize = 40M
 Must be greater than or equal to upload_max_filesize
 post_max_size = 40M
 
-*There is a hard-coded value in a query in the file galleryPHP/Controller/loginSystem/signupSystem.php in the private function createUser*, 3 is the id of the defaut role for the creation of user.
+*There is a hard-coded value in a query inside the file galleryPHP/Controller/loginSystem/signupSystem.php in the private function createUser*, 3 is the id of the defaut role for the creation of user.
 
 Enjoy
 
