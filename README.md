@@ -1,3 +1,5 @@
+# No futher update
+
 # GalleryPHP
 Hello,
 
@@ -18,8 +20,10 @@ You can do whatever you want with this project.
 - The facade pattern is used for all the view
 - The singleton pattern is used for the logger system
 - The proxy pattern is used for the login system
-- The decorator pattern is used for applying sepia, blur and resize on picture before download
 - The factory pattern is used for the creation of picture
+
+### Not correctly implemented
+- The decorator pattern is used for applying sepia, blur and resize on picture before download
 
 
 ### Not implement yet
